@@ -15,6 +15,3 @@ class Task4
         return str_replace(' ', '', ucwords(preg_replace('/[\_\-\s]+/', ' ', $input)));
     }
 }
-$obj = new Task4;
-$obj->main('he quick-brown_fox jumps over the_lazy-dog
-');

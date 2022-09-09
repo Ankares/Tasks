@@ -5,7 +5,7 @@ use InvalidArgumentException;
 
 class Task8
 {
-    function main(string $json)
+    function main(string $json): array
     {
         if(!is_string($json))
         {
@@ -13,17 +13,12 @@ class Task8
         }
         else
         {
-            $res = json_decode($json, true, 512);
-            foreach($res as $key => $value)
+            $jsonDec = json_decode($json,true,512);
+            array_walk_recursive($jsonDec, function($k,$v)
             {
-                if(is_array($value))
-                {
-                    foreach($value as $key => $value){
-                        $key. ': ' .$value;
-                    }
-                }
-                echo "$key : $value" . "\r\n";
-            }
-        } 
+               echo "$v: $k \r\n";
+            });  
+            return $jsonDec;   
+        }
     }
 }

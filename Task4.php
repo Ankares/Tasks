@@ -1,17 +1,20 @@
 <?php
+
 namespace Tasks\Task4;
 
 use InvalidArgumentException;
-class Task4 
+
+class Task4
 {
-    function main(string $input) : string
+    public function main(string $input): string
     {
-        if (!is_string($input)) 
-        {
+        if (!is_string($input)) {
             throw new InvalidArgumentException('function only accepts string. Input was: '.$input);
         }
-            return str_replace(' ','',ucwords(preg_replace('/[\_\-\s]+/',' ', $input)));
+
+        return str_replace(' ', '', ucwords(preg_replace('/[\_\-\s]+/', ' ', $input)));
     }
 }
-
- 
+$obj = new Task4;
+$obj->main('he quick-brown_fox jumps over the_lazy-dog
+');

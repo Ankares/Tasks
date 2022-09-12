@@ -13,6 +13,10 @@ class Task12
         $this->num1 = $num1;
         $this->num2 = $num2;
     }
+    public function __destruct()
+    {
+        echo $this->result;
+    }
     public function add(): Task12
     {
         $this->result = $this->num1 + $this->num2;

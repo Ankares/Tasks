@@ -2,7 +2,7 @@
 
 namespace src;
 
-class MyCalculator
+class Task12
 {
     public $num1;
     public $num2;
@@ -13,49 +13,49 @@ class MyCalculator
         $this->num1 = $num1;
         $this->num2 = $num2;
     }
-    public function add(): MyCalculator
+    public function add(): Task12
     {
         $this->result = $this->num1 + $this->num2;
 
         return $this;
     }
-    public function multiply(): MyCalculator
+    public function multiply(): Task12
     {
         $this->result = $this->num1 * $this->num2;
 
         return $this;
     }
-    public function divide(): MyCalculator
+    public function divide(): Task12
     {
         $this->result = $this->num1 / $this->num2;
 
         return $this;
     }
-    public function substract(): MyCalculator
+    public function substract(): Task12
     {
         $this->result = $this->num1 - $this->num2;
 
         return $this;
     }
-    public function addBy(int $number): MyCalculator
+    public function addBy(int $number): Task12
     {
         $this->result += $number;
 
         return $this;
     }
-    public function divideBy(int $number): MyCalculator
+    public function divideBy(int $number): Task12
     {
         $this->result /= $number;
 
         return $this;
     }
-    public function multiplyBy(int $number): MyCalculator
+    public function multiplyBy(int $number): Task12
     {
         $this->result *= $number;
 
         return $this;
     }
-    public function substractBy(int $number): MyCalculator
+    public function substractBy(int $number): Task12
     {
         $this->result -= $number;
 

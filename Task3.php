@@ -6,10 +6,10 @@ use InvalidArgumentException;
 
 class Task3
 {
-    public function main(int $number): int
+    public function main($number): int
     {
-        if (!is_int($number)) {
-            throw new InvalidArgumentException('function only accepts integers. Input was: '.$number);
+        if (!is_int($number) || $number < 10) {
+            throw new InvalidArgumentException('function only accepts integers more than 10. Input was: '.$number);
         } else {
             $amount = 0;
             $string = (string) $number;

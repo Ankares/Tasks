@@ -6,7 +6,7 @@ use InvalidArgumentException;
 
 class Task3
 {
-    public function main($number): int
+    public function main(int $number): int
     {
         if (!is_int($number) || $number < 10) {
             throw new InvalidArgumentException('function only accepts integers more than 10. Input was: '.$number);

@@ -8,8 +8,8 @@ class Task10
 {
     public function main(int $input): array
     {
-        if (!is_int($input)) {
-            throw new InvalidArgumentException('function only accepts integers. Input was: '.$input);
+        if (!is_int($input) || $input < 1) {
+            throw new InvalidArgumentException('function only accepts positive integers. Input was: '.$input);
         } else {
             $array = [$input];
             do {

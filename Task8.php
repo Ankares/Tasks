@@ -6,17 +6,16 @@ use InvalidArgumentException;
 
 class Task8
 {
-    public function main(string $json): array
+    public function main(string $json): string
     {
-        if (!is_string($json)) {
-            throw new InvalidArgumentException('function only accepts strings. Input was: '.$json);
+        if (!is_string($json) || !is_object(json_decode($json))) {
+            throw new InvalidArgumentException('function only accepts json. Input was: '.$json);
         } else {
             $jsonDec = json_decode($json, true, 512);
-            array_walk_recursive($jsonDec, function ($k, $v) {
-                echo "$v: $k \r\n";
-            });
 
-            return $jsonDec;
+            return array_walk_recursive($jsonDec, function ($k, $v) {
+                echo "$v: $k\r\n";
+            });
         }
     }
 }

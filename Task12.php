@@ -37,11 +37,14 @@ class Task12
     }
     public function divide(): Task12
     {
+        if ($this->num2 == 0) {
+            throw new InvalidArgumentException('division by zero.');
+        }
         $this->result = $this->num1 / $this->num2;
 
         return $this;
     }
-    public function substract(): Task12
+    public function subtract(): Task12
     {
         $this->result = $this->num1 - $this->num2;
 
@@ -59,8 +62,8 @@ class Task12
     }
     public function divideBy(int $number): Task12
     {
-        if (!is_int($number)) {
-            throw new InvalidArgumentException('function only accepts integers.');
+        if (!is_int($number) || $number == 0) {
+            throw new InvalidArgumentException('function only accepts integers or division by zero.');
         } else {
             $this->result /= $number;
 
@@ -77,7 +80,7 @@ class Task12
             return $this;
         }
     }
-    public function substractBy(int $number): Task12
+    public function subtractBy(int $number): Task12
     {
         if (!is_int($number)) {
             throw new InvalidArgumentException('function only accepts integers.');

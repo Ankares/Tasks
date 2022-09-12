@@ -2,6 +2,8 @@
 
 namespace src;
 
+use InvalidArgumentException;
+
 class Task12
 {
     public $num1;
@@ -10,8 +12,12 @@ class Task12
 
     public function __construct(int $num1, int $num2)
     {
-        $this->num1 = $num1;
-        $this->num2 = $num2;
+        if (!is_int($num1) && !is_int($num2)) {
+            throw new InvalidArgumentException('function only accepts integers.');
+        } else {
+            $this->num1 = $num1;
+            $this->num2 = $num2;
+        }
     }
     public function __destruct()
     {
@@ -43,26 +49,42 @@ class Task12
     }
     public function addBy(int $number): Task12
     {
-        $this->result += $number;
+        if (!is_int($number)) {
+            throw new InvalidArgumentException('function only accepts integers.');
+        } else {
+            $this->result += $number;
 
-        return $this;
+            return $this;
+        }
     }
     public function divideBy(int $number): Task12
     {
-        $this->result /= $number;
+        if (!is_int($number)) {
+            throw new InvalidArgumentException('function only accepts integers.');
+        } else {
+            $this->result /= $number;
 
-        return $this;
+            return $this;
+        }
     }
     public function multiplyBy(int $number): Task12
     {
-        $this->result *= $number;
+        if (!is_int($number)) {
+            throw new InvalidArgumentException('function only accepts integers.');
+        } else {
+            $this->result *= $number;
 
-        return $this;
+            return $this;
+        }
     }
     public function substractBy(int $number): Task12
     {
-        $this->result -= $number;
+        if (!is_int($number)) {
+            throw new InvalidArgumentException('function only accepts integers.');
+        } else {
+            $this->result -= $number;
 
-        return $this;
+            return $this;
+        }
     }
 }

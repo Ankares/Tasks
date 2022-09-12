@@ -1,6 +1,6 @@
 <?php
 
-namespace Tasks\Task2;
+namespace src;
 
 use InvalidArgumentException;
 

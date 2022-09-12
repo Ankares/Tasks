@@ -1,6 +1,6 @@
 <?php
 
-namespace Tasks\Task12;
+namespace src;
 
 class MyCalculator
 {

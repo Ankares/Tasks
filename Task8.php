@@ -18,7 +18,7 @@ class Task8
                     $string .= "$key: $value" . "\r\n";
                 } else {
                     foreach ($value as $k => $v) {
-                        $string .= "$k: $v" . "\r\n";
+                        $string .= "$k: $v";
                     }
                 }
             }
